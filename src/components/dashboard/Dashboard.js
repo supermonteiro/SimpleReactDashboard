@@ -177,8 +177,8 @@ class Dashboard extends React.Component {
                     </Row>
                     <Row className="statsBox">
                         {/* circle charts*/}
-                        <Col xl={6} lg={4} md={6} className="circleCols" style={{ marginLeft: -30 }}>
-                            <Card className="circleCharts">                                
+                        <Col xl={8} lg={4} md={6} className="circleCols" style={{ marginLeft: -30 }}>
+                            <Card className="circleCharts">
                                 <CardBody>
                                     <CircularProgressbarWithChildren value={100}
                                         styles={buildStyles({
@@ -192,7 +192,7 @@ class Dashboard extends React.Component {
                                     </CircularProgressbarWithChildren>
                                 </CardBody>
                             </Card>
-                            <Card className="circleCharts">                                
+                            <Card className="circleCharts">
                                 <CardBody>
                                     <CircularProgressbarWithChildren value={61}
                                         styles={buildStyles({
@@ -206,7 +206,7 @@ class Dashboard extends React.Component {
                                     </CircularProgressbarWithChildren>
                                 </CardBody>
                             </Card>
-                            <Card className="circleCharts">                                
+                            <Card className="circleCharts">
                                 <CardBody>
                                     <CircularProgressbarWithChildren value={39}
                                         styles={buildStyles({
@@ -221,11 +221,11 @@ class Dashboard extends React.Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                        
-                        
-                        <div style={{ borderLeft: "2px solid gray", height: "120px", marginTop: "20px", marginLeft: "20px" }}></div>
 
-                        <Col xl={3} lg={4} md={6}> {/* badges */}
+
+                        <div style={{ borderLeft: "2px solid gray", height: "180px", marginTop: "10px", marginLeft: "20px" }}></div>
+
+                        <Col xl={4} lg={4} md={6} style={{paddingTop: 15}}> {/* badges */}
                             <List component="nav" aria-label="Contacts">
                                 <ListItem button>
                                     <ListItemIcon>
@@ -265,22 +265,25 @@ class Dashboard extends React.Component {
                                 </ListItem>
                             </List>
                         </Col>
-                        
-                        <div style={{ borderLeft: "2px solid gray", height: "120px", marginTop: "20px", marginLeft: "20px" }}></div>
-
-                        <Col xl={3} lg={4} md={6}> {/* line charts*/}
+                    </Row>
+                    <Row className="statsBox">
+                        <Col xl={4} lg={4} md={4}> {/* line charts*/}
                             <Card>
                                 <CardHeader>Total Spending $2,113,507</CardHeader>
                                 <CardBody>
                                     <Line data={this.spendingLineData} />
                                 </CardBody>
                             </Card>
+                        </Col>
+                        <Col xl={4} lg={4} md={4}>
                             <Card>
                                 <CardHeader>Savings $96,788</CardHeader>
                                 <CardBody>
                                     <Line data={this.savingsLineData} />
                                 </CardBody>
                             </Card>
+                        </Col>
+                        <Col xl={4} lg={4} md={4}>
                             <Card>
                                 <CardHeader>Foregone Savings $526,536</CardHeader>
                                 <CardBody>
@@ -289,75 +292,99 @@ class Dashboard extends React.Component {
                             </Card>
                         </Col>
                     </Row>
-                    <Row style={{backgroundColor:"#f7f7f7"}}>
-                        <div>&nbsp;</div>                
+                    <Row style={{ backgroundColor: "#f7f7f7" }}>
+                        <div>&nbsp;</div>
                     </Row>
-                    <Row className="statsBox" > 
-                        <Col xl={6} lg={12} md={12} style={{marginLeft:"-25px"}} className="progressCards"> {/* progress bars*/}
+                    <Row className="statsBox" >
+                        <Col xl={6} lg={12} md={12} style={{ marginLeft: "-25px" }} className="progressCards"> {/* progress bars*/}
                             <Card>
                                 <CardTitle>RATE OF CONTRACT COMPLIANCE BY SUPPLIER CATEGORY</CardTitle>
-                                <CardSubtitle style={{display:"flex"}}>
-                                        <div><span>Category & <br/>Toy Supplier</span></div>
-                                        <div><span># Suppliers</span></div>
-                                        <div><span> Share of managed suppliers</span></div>
+                                <CardSubtitle style={{ display: "flex" }}>
+                                    <div><span>Category & <br />Toy Supplier</span></div>
+                                    <div><span># Suppliers</span></div>
+                                    <div><span> Share of managed suppliers</span></div>
                                 </CardSubtitle>
                                 <CardBody >
-                                    <div xl={3} className="progressCategory"><span>Category 1</span> <span>610</span><span><br />Supplier 0056</span></div>
-                                    <div xl={3} className="progressBar"><Progress value={75} max="100" color="success">75%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 1</Row>
+                                        <Row className="progressSupplier">Supplier 0056</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">610</Col>
+                                    <Col className="progressBar"><Progress value={75} max="100" color="success">75%</Progress></Col>
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody >
-                                    <div xl={3} className="progressCategory"><span>Category 2</span> <span> 15</span><span><br />Supplier 0149</span></div>
-                                    <div xl={3} className="progressBar" style={{marginLeft:"35px"}}><Progress value={47} max="100" color="orange">47%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 2</Row>
+                                        <Row className="progressSupplier">Supplier 0149</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">15</Col>
+                                    <Col className="progressBar"><Progress value={47} max="100" color="orange">47%</Progress></Col>
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <div xl={3} className="progressCategory"><span>Category 3</span> <span>105</span><span><br />Supplier 0007</span></div>
-                                    <div xl={3} className="progressBar"><Progress value={84} max="100" color="info">84%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 3</Row>
+                                        <Row className="progressSupplier">Supplier 0007</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">105</Col>
+                                    <Col className="progressBar"><Progress value={84} max="100" color="info">84%</Progress></Col>
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <div xl={3} className="progressCategory"><span>Category 4</span> <span>20</span><span><br />Supplier 0208</span></div>
-                                    <div xl={3} className="progressBar"><Progress value={57} max="100" color="brown">57%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 4</Row>
+                                        <Row className="progressSupplier">Supplier 0208</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">20</Col>
+                                    <Col className="progressBar"><Progress value={57} max="100" color="brown">57%</Progress></Col>
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <div xl={3} className="progressCategory"><span>Category 5</span> <span>29</span><span><br />Supplier 0149</span></div>
-                                    <div xl={3} className="progressBar"><Progress value={47} max="100" color="danger">47%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 5</Row>
+                                        <Row className="progressSupplier">Supplier 0149</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">29</Col>
+                                    <Col className="progressBar"><Progress value={47} max="100" color="danger">47%</Progress></Col>
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <div xl={3} className="progressCategory"><span>Category 6</span> <span>25</span><span><br />Supplier 0401</span></div>
-                                    <div xl={3} className="progressBar"><Progress value={33} max="100" color="yellow">33%</Progress></div>
+                                    <Col xl={3}>
+                                        <Row className="progressCategory">Category 6</Row>
+                                        <Row className="progressSupplier">Supplier 0401</Row>
+                                    </Col>
+                                    <Col className="progressNumberSuppliers">25</Col>
+                                    <Col className="progressBar"><Progress value={33} max="100" color="yellow">33%</Progress></Col>
                                 </CardBody>
                             </Card>
                         </Col>
 
-                        <Col xl={6} lg={12} md={12} style={{width:"auto"}}> {/* charts */}
-                            <Card> 
+                        <Col xl={6} lg={12} md={12} style={{ width: "auto" }}> {/* charts */}
+                            <Card>
                                 <CardBody>
                                     <Bar data={this.barData} options={this.barOptions} />
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Pie data={this.pieData}  />
+                                    <Pie data={this.pieData} />
                                 </CardBody>
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Doughnut data={this.pieData}  />
+                                    <Doughnut data={this.pieData} />
                                 </CardBody>
                             </Card>
                         </Col>
                     </Row>
-                    <Row style={{backgroundColor:"#f7f7f7"}}>
-                        <div>&nbsp;</div>                
+                    <Row style={{ backgroundColor: "#f7f7f7" }}>
+                        <div>&nbsp;</div>
                     </Row>
                 </Container>
             </div>

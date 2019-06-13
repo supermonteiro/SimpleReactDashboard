@@ -11088,18 +11088,26 @@ div.progressCards div.card div.card-body {
   display: flex;
 }
 
-div.progressCards div.card div.card-body div.progressBar {
-  height: 30px;
-  width: 250px;
-  margin-left: 25px;
-  margin-top: 5px;
-}
-
 div.progressCards div.card div.card-body div.card-title {
   font-size: 16px;
 }
 
 div.progressCards div.card div.card-body div.card-subtitle {
+  color: gray;
+}
+
+div.progressCards div.card div.card-body div.col-xl-3 {
+  margin-left: -15px;
+}
+
+div.progressCards div.card div.card-body div.col-xl-3 div.progressCategory.row {
+  font-size: 14px;
+  font-style: bold;
+  padding-left: 5px;
+}
+
+div.progressCards div.card div.card-body div.col-xl-3 div.progressSupplier.row {
+  font-size: 12px;
   color: gray;
 }
 
@@ -11111,6 +11119,23 @@ div.progressCards div.card div.card-body div.progress {
 div.progressCards div.card div.card-body div.progress div.progress-bar {
   text-align: center;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div.progressCards div.card div.card-body div.progressBar {
+  height: 30px;
+  width: 270px;
+  margin-left: 25px;
+}
+
+div.progressCards div.card div.card-body div.progressBar div.progressBar.col {
+  padding-bottom: 10px;
+}
+
+div.progressCards div.card div.card-body div.progressNumberSuppliers.col {
+  font-size: 16px;
+  font-style: bold;
+  padding-left: 40px;
+  padding-top: 5px;
 }
 
 .ListItem {
