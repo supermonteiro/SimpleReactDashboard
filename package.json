@@ -3,9 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.0.0-rc.0",
+    "@material-ui/icons": "^4.1.0",
+    "@mdi/font": "^3.6.95",
+    "@mdi/js": "^3.6.95",
+    "@mdi/react": "^1.1.1",
+    "@mdi/svg": "^3.6.95",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
+    "chartjs": "^0.3.24",
     "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
+    "react-circular-progressbar": "^2.0.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-native-elements": "^1.1.0",
+    "react-native-vector-icons": "^6.5.0",
+    "react-native-web": "^0.11.4",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "typescript": "^3.5.1",
+    "webpack": "^4.29.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^3.0.0"
   }
 }
