@@ -32,6 +32,22 @@
   margin: 4px 0px 2px 10px;
 }
 
+.badgesCol {
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        padding-top: 1%;
+        margin-left: 3%;
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+        padding-top: 1%;
+        margin-left: 25%;
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        margin-left: 25%;
+    }
+}
+
 .bg-orange {
   background-color: orange;
 }
@@ -45,26 +61,58 @@
 }
 
 .circleCols {
-  display: flex;
+    display: flex;
+    margin-left: -2%;
+
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        margin-left: 3%;
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+        margin-left: 5%;
+    }
 }
 
 .circleCharts {
-  background-color: transparent;
-  border: none;
-  width: 30%;
-  div.card-body {
-    div {
-      div {
-        p {
-          font-size: 12px;
+    background-color: transparent;
+    border: none;
+    width: 30%;
+
+    div.card-body {
+        div {
+            div {
+                div {
+                    div.circlePercent {
+                        font: 12px;
+                        margin-top: 15px;
+
+                        @media screen and (max-width: map-get($grid-breakpoints, xl)) {
+                            margin-top: 45%;
+                        }
+
+                        @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+                            margin-top: 5%;
+                        }
+
+                        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                            margin-top: 10%;
+                        }
+
+                        span {
+                            font-weight: bold;
+                            font-size: 30px;
+                        }
+                    }
+
+                    div {
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
         }
-        span {
-          font-style: bold;
-          font-size: 30px;
-        }
-      }
     }
-  }
 }
 
 .container {
@@ -79,83 +127,159 @@
   margin: 4px 0 0 0;
 }
 
+div.barCharts {
+    div.card {
+        div.card-body {
+            margin-left: 5%;
+        }
+    }
+}
+
 div.progressCards {
-  font-size: 14px;
-  font-style: bold;
-  div.card {
-    div.card-header {
-      font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+
+    @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+        padding-left: 15%;
+        border: none;
     }
 
-    div.card-subtitle {
-      display: flex;
-      margin-left: 20px;
-      div {
-        margin-right: 60px;
-        span {
-          color: gray;
-          font-size: 12px;
-        }
-      }
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        padding-left: 5%;
+        border: none;
     }
 
-    div.card-body {
-      display: flex;
+    div.card {
+        border: none;
 
-      div.card-title {
-        font-size: 16px;
-      }
-
-      div.card-subtitle {
-        color: gray;
-      }
-
-      div.col-xl-3 {
-        margin-left: -15px;
-        div.progressCategory.row {
-          font-size: 14px;
-          font-style: bold;
-          padding-left: 5px;
+        div.card-header {
+            font-size: 12px;
         }
 
-        div.progressSupplier.row {
-          font-size: 12px;
-          color: gray;
+        .card-title {
+            font-size: 17px;
+            margin-left: 5%;
+            margin-top: 1%;
+            margin-bottom: 3%;
         }
-      }
 
-      div.progress {
-        height: 30px;
-        width: 250px;
-        div.progress-bar {
-          text-align: center;
-          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-        }
-      }
+        .card-subtitle {
+            display: flex;
+            font-size: 14px;
+            margin-left: 3%;
 
-      div.progressBar {
-        height: 30px;
-        width: 270px;
-        margin-left: 25px;
-        div.progressBar.col {
-          padding-bottom: 10px;          
+            @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                margin-left: 10%;
+            }
+
+            div {
+                margin-left: 5%;
+
+                @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+                    margin-left: 5%;
+                    margin-right: 7%;
+                }
+
+                @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                    margin-left: -5%;
+                    margin-right: 17%;
+                }
+
+                span {
+                    color: gray;
+                    font-size: 12px;
+                }
+            }
         }
-      }
-      
-      div.progressNumberSuppliers.col {
-        font-size: 16px;
-        font-style: bold;
-        padding-left: 40px;
-        padding-top: 5px;
-      }
+
+        div.card-body {
+            display: flex;
+
+            div.card-subtitle {
+                color: gray;
+            }
+
+            div.col-xl-3 {
+                margin-left: -15px;
+
+                div.progressCategory.row {
+                    font-size: 14px;
+                    font-style: bold;
+                    padding-left: 5px;
+                }
+
+                div.progressSupplier.row {
+                    font-size: 12px;
+                    color: gray;
+                }
+            }
+
+            div.progress {
+                height: 30px;
+                width: 250px;
+
+                div.progress-bar {
+                    text-align: center;
+                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                }
+            }
+
+            div.progressBar {
+                height: 30px;
+                width: 270px;
+                margin-left: -40%;
+
+                div.progressBar.col {
+                    padding-bottom: 10px;
+                }
+            }
+
+            div.progressNumberSuppliers.col {
+                font-size: 16px;
+                font-weight: bold;
+                padding-left: 40px;
+                padding-top: 5px;
+            }
+        }
     }
-  }
+}
+
+div.vertBar {
+    @media screen and (max-width: map-get($grid-breakpoints, xl)) {
+        display: none;
+    }
+}
+
+.lineCharts {
+    margin: 5%;
+    padding-left: 3%
+}
+
+.lineChartsCol {
+
+    @media screen and (max-width: map-get($grid-breakpoints, xl)) and (min-width: map-get($grid-breakpoints, lg)) {
+        margin-left: 15%;
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        margin-left: 15%;
+    }
 }
 
 .ListItem {
   background-color: #f9f9f9;
   border-radius: 12px;
   color: #8e8e8e;
+}
+
+.medium {
+    text-align:center;
 }
 
 .MuiButtonBase-root,
@@ -197,10 +321,14 @@ div.progressCards {
 }
 
 .statsBox {
-  background-color: white;
-  padding: 10px;
+    background-color: white;
+    padding: 10px;
 
-  & > .circleCols {
-    margin-right: -40px !important;
-  }
+    & > .circleCols {
+        margin-right: -40px !important;
+    }
+
+    canvas {
+        margin-left: -25px;
+    }
 }

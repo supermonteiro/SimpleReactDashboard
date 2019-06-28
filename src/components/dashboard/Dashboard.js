@@ -170,14 +170,14 @@ class Dashboard extends React.Component {
             <div className='wrapper'>
                 <Container>
                     <Row className="pills">
-                        <Col md={{ span: 6, offset: 6 }}><Badge pill>Year: 2017</Badge><Badge pill>Subsidiary: All</Badge><Badge pill>Managers: All</Badge></Col>
+                        <Col xl={{ span: 6, offset: 6 }} lg={{ span: 6, offset: 4 }} md={{ span: 6, offset: 2 }}><Badge pill>Year: 2017</Badge><Badge pill>Subsidiary: All</Badge><Badge pill>Managers: All</Badge></Col>
                     </Row>
                     <Row>
                         <Col className="colTitle" >SUPPLIER COMPLIANCE STATS</Col>
                     </Row>
                     <Row className="statsBox">
                         {/* circle charts*/}
-                        <Col xl={8} lg={4} md={6} className="circleCols" style={{ marginLeft: -30 }}>
+                        <Col xl={8} lg={12} md={12} className="circleCols">
                             <Card className="circleCharts">
                                 <CardBody>
                                     <CircularProgressbarWithChildren value={100}
@@ -187,7 +187,7 @@ class Dashboard extends React.Component {
                                             trailColor: '#d6d6d6',
                                             backgroundColor: '#3e98c7',
                                         })}>
-                                        <div style={{ fontSize: 12, marginTop: -5 }}><span>804</span></div>
+                                        <div className="circlePercent" ><span>804</span></div>
                                         <div><p>SUPPLIERS</p></div>
                                     </CircularProgressbarWithChildren>
                                 </CardBody>
@@ -201,7 +201,7 @@ class Dashboard extends React.Component {
                                             trailColor: '#d6d6d6',
                                             backgroundColor: '#3e98c7',
                                         })}>
-                                        <div style={{ fontSize: 12, marginTop: -5 }}><span>61%</span></div>
+                                        <div className="circlePercent" ><span>61%</span></div>
                                         <div><p>CONTRACTED</p></div>
                                     </CircularProgressbarWithChildren>
                                 </CardBody>
@@ -215,7 +215,7 @@ class Dashboard extends React.Component {
                                             trailColor: '#d6d6d6',
                                             backgroundColor: '#3e98c7',
                                         })}>
-                                        <div style={{ fontSize: 12, marginTop: -5 }}><span>39%</span></div>
+                                        <div className="circlePercent" ><span>39%</span></div>
                                         <div><p>UNLISTED</p></div>
                                     </CircularProgressbarWithChildren>
                                 </CardBody>
@@ -223,9 +223,9 @@ class Dashboard extends React.Component {
                         </Col>
 
 
-                        <div style={{ borderLeft: "2px solid gray", height: "180px", marginTop: "10px", marginLeft: "20px" }}></div>
-
-                        <Col xl={4} lg={4} md={6} style={{paddingTop: 15}}> {/* badges */}
+                        <div className="vertBar" style={{ borderLeft: "2px solid gray", height: "180px", marginTop: "10px", marginLeft: "20px" }}></div>
+                        
+                        <Col xl={4} lg={6} md={6} className="badgesCol"> {/* badges */}
                             <List component="nav" aria-label="Contacts">
                                 <ListItem button>
                                     <ListItemIcon>
@@ -267,24 +267,24 @@ class Dashboard extends React.Component {
                         </Col>
                     </Row>
                     <Row className="statsBox">
-                        <Col xl={4} lg={4} md={4}> {/* line charts*/}
-                            <Card>
+                        <Col xl={4} lg={8} md={8} className="lineChartsCol" > {/* line charts*/}
+                            <Card className="lineCharts">
                                 <CardHeader>Total Spending $2,113,507</CardHeader>
                                 <CardBody>
-                                    <Line data={this.spendingLineData} />
+                                    <Line data={this.spendingLineData} style={{paddingLeft: -30}}/>
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col xl={4} lg={4} md={4}>
-                            <Card>
+                        <Col xl={4} lg={8} md={8} className="lineChartsCol">
+                            <Card className="lineCharts">
                                 <CardHeader>Savings $96,788</CardHeader>
                                 <CardBody>
                                     <Line data={this.savingsLineData} />
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col xl={4} lg={4} md={4}>
-                            <Card>
+                        <Col xl={4} lg={8} md={8} className="lineChartsCol">
+                            <Card className="lineCharts">
                                 <CardHeader>Foregone Savings $526,536</CardHeader>
                                 <CardBody>
                                     <Line data={this.foregoneSavingsLineData} />
@@ -296,16 +296,16 @@ class Dashboard extends React.Component {
                         <div>&nbsp;</div>
                     </Row>
                     <Row className="statsBox" >
-                        <Col xl={6} lg={12} md={12} style={{ marginLeft: "-25px" }} className="progressCards"> {/* progress bars*/}
+                        <Col xl={6} lg={12} md={12} className="progressCards"> {/* progress bars*/}
                             <Card>
                                 <CardTitle>RATE OF CONTRACT COMPLIANCE BY SUPPLIER CATEGORY</CardTitle>
                                 <CardSubtitle style={{ display: "flex" }}>
-                                    <div><span>Category & <br />Toy Supplier</span></div>
-                                    <div><span># Suppliers</span></div>
-                                    <div><span> Share of managed suppliers</span></div>
+                                    <div lg={4} md={4}><span>Category & <br />Toy Supplier</span></div>
+                                    <div lg={4} md={4}><span># Suppliers</span></div>
+                                    <div lg={4} md={4}><span> Share of managed suppliers</span></div>
                                 </CardSubtitle>
                                 <CardBody >
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 1</Row>
                                         <Row className="progressSupplier">Supplier 0056</Row>
                                     </Col>
@@ -315,7 +315,7 @@ class Dashboard extends React.Component {
                             </Card>
                             <Card>
                                 <CardBody >
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 2</Row>
                                         <Row className="progressSupplier">Supplier 0149</Row>
                                     </Col>
@@ -325,7 +325,7 @@ class Dashboard extends React.Component {
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 3</Row>
                                         <Row className="progressSupplier">Supplier 0007</Row>
                                     </Col>
@@ -335,7 +335,7 @@ class Dashboard extends React.Component {
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 4</Row>
                                         <Row className="progressSupplier">Supplier 0208</Row>
                                     </Col>
@@ -345,7 +345,7 @@ class Dashboard extends React.Component {
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 5</Row>
                                         <Row className="progressSupplier">Supplier 0149</Row>
                                     </Col>
@@ -355,7 +355,7 @@ class Dashboard extends React.Component {
                             </Card>
                             <Card>
                                 <CardBody>
-                                    <Col xl={3}>
+                                    <Col xl={3} lg={3} md={3}>
                                         <Row className="progressCategory">Category 6</Row>
                                         <Row className="progressSupplier">Supplier 0401</Row>
                                     </Col>
@@ -365,7 +365,7 @@ class Dashboard extends React.Component {
                             </Card>
                         </Col>
 
-                        <Col xl={6} lg={12} md={12} style={{ width: "auto" }}> {/* charts */}
+                        <Col className="barCharts" xl={6} lg={12} md={12} style={{ width: "auto" }}> {/* charts */}
                             <Card>
                                 <CardBody>
                                     <Bar data={this.barData} options={this.barOptions} />
